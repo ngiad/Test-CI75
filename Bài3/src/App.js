@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import './App.css';
+
+const RegHttp = new RegExp("^(http|https)://", "i");
 const App = () => {
   // giá trị chả về 
   const [dataLink,setDataLink] = useState({})
@@ -13,7 +15,12 @@ const App = () => {
   // html dom
   const SubmitForm = (e) =>{
     e.preventDefault();
-    shrtcodeAPI(valueInput)
+    const test = RegHttp.test(valueInput)
+    if(test){
+      shrtcodeAPI(valueInput)
+      return
+    }
+    alert("Nhập url cần rút gọn")
   } 
 
   // api
