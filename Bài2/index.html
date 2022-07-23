@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Bài 2</h1>
+    <p>Kết quả ở console.log</p>
+    <script>
+      const array = [60, 40, 55, 75, 64];
+      function alternatingSums(array){
+        const Nhom1 = []
+        const Nhom2 = []
+        let sumNhom1 = 0
+        let sumNhom2 = 0
+         for(let i = 0; i < array.length; i++){
+          if(i%2 === 0){
+            Nhom1[Nhom1.length] = array[i]
+          }
+          if(i%2 !== 0){
+            Nhom2[Nhom2.length] = array[i]
+          }
+        }
+        
+        for(let i = 0 ; i < Nhom1.length ; i++){
+          sumNhom1 = sumNhom1 + Nhom1[i]
+        }
+        for(let i = 0 ; i < Nhom2.length ; i++){
+          sumNhom2 = sumNhom2 + Nhom2[i]
+        }
+        
+        return [sumNhom1,sumNhom2]
+      }
+
+      const OUTPUT = alternatingSums(array)
+      console.log(OUTPUT)
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Bài 1</h1>
+    <p>Kết quả ở console.log</p>
+    <script>
+      const array = [2, 3, -5, -2, 4];
+
+
+      function adjacentElementsProduct(array) {
+        let max = 0
+        for (let i = 0, j = 1; i < array.length - 1; i++, j++) {
+          if (array[i] * array[j] > max) {
+             max = array[i] * array[j];
+          }
+        }
+        return max
+      }
+
+     const  max = adjacentElementsProduct(array)
+     console.log("Array được cho : ",array)
+     console.log( "kết quả của cặp hai số liền kề có tích lớn nhất : ",max)
+
+    </script>
+
+  </body>
+</html>
