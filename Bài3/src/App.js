@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css';
 
 const RegHttp = new RegExp("^(http|https)://", "i");
@@ -22,6 +22,12 @@ const App = () => {
     }
     alert("Nhập url cần rút gọn")
   } 
+
+  useEffect(() =>{
+    if(valueInput.length === 0){
+      setDataLink({})
+    }
+  },[valueInput])
 
   // api
   const shrtcodeAPI = async(URL) =>{
